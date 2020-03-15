@@ -7,7 +7,7 @@ class MP3Importer
 
    def files
     @files = [] 
-    file = Dir.entries(@path) #file is an array, seen by binding.pry 
+    file = Dir.entries(@path) 
     file.each do |file|
       if file.include?("mp3")
         @files << file 
