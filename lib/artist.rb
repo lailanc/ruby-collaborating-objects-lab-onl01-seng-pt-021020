@@ -3,12 +3,12 @@ class Artist
   @@all = []
 
   def initialize(artist)
-    @name = artist #accepts and sets artists name 
+    @name = artist 
     @songs = []
     save
   end
 
-  def self.all #returns all existing Artist instances 
+  def self.all 
     @@all
   end
 
@@ -17,7 +17,7 @@ class Artist
   end
 
   def add_song(song) 
-    song.artist = self #keeps track of all the songs from an artist
+    song.artist = self 
   end
 
   def songs
@@ -26,16 +26,15 @@ class Artist
   end
 
   def self.find(name)
-    self.all.find {|artist| artist.name == artist.name} #find the artist whose name matches the name passed in here 
+    self.all.find {|artist| artist.name == artist.name} 
   end
 
   def self.find_or_create_by_name(name)
     self.find(name) ? self.find(name) : self.new(name)
-    #always returns an artist instance 
-    #finds or creates an artist by name, and creates a new instance of Artist if none exist 
+   
   end
 
   def print_songs
-    self.songs.each {|song| puts song.name} #shows all the artist's songs 
+    self.songs.each {|song| puts song.name} 
   end
 end 
